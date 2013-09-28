@@ -16,23 +16,6 @@
 
 var gInfoTitle = "", gInfo = "", gBatteryListener;
 
-function eventSearchSuccessCallback(events) {
-	/* Update the first existing event */
-
-	for (i = 0; i < events.length; i++) {
-		alert(events[i].duration.length);
-		alert(events[i].startDate.getDate);
-
-		var today = new Date();
-		var h = today.getHours();
-
-		var m = today.getMinutes();
-		var s = today.getSeconds();
-
-		var day = today.getDate();
-		
-	}
-}
 
 function errorCallback(message) {
 
@@ -42,30 +25,22 @@ function errorCallback(message) {
 $(document).delegate("#main", "pageinit", function() {
 	$("#calendar").bind("vclick", function() {
 
-		var myCalendar1 = tizen.calendar.getDefaultCalendar("EVENT");
+		verifyCalendar();
 
-		myCalendar1.find(eventSearchSuccessCallback, errorCallback);
+		return false;
+	});
+	
+	
+	$("#newcalendar").bind("vclick", function() {
+
+		newCalendar();
 
 		return false;
 	});
 
 	$("#storage-info").bind("vclick", function() {
 
-		// Gets the default calendar
-		var calendar = tizen.calendar.getDefaultCalendar("EVENT");
-
-		var ev = new tizen.CalendarEvent({
-			description : 'HTML5 Introduction',
-			summary : 'HTML5 Webinar ',
-			startDate : new tizen.TZDate(2011, 3, 30, 10, 0),
-			duration : new tizen.TimeDuration(1, "HOURS"),
-			location : 'Huesca'
-		});
-
-		calendar.add(ev);
-		alert('Event added with uid ' + ev.id.uid)
-
-		alert(ev.description)
+		verifyCalendar();
 
 		return false;
 	});
