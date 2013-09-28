@@ -1,15 +1,23 @@
 function newCalendar() {
+	
+	
+	
 	var calendar = tizen.calendar.getDefaultCalendar("EVENT");
 
 	var ev = new tizen.CalendarEvent({
 		description : 'HTML5 Introduction',
 		summary : 'HTML5 Webinar ',
 		startDate : new tizen.TZDate(2013, 8, 28, 15, 0),
-		duration : new tizen.TimeDuration(5, "HOURS"),
+		duration : new tizen.TimeDuration(1, "HOURS"),
 		location : 'Huesca'
 	});
+
 	calendar.add(ev);
-	alert('Event added with uid ' + ev.id.uid)
+	//alert('Event added with uid ' + ev.id.uid)
+
+	alert(ev.description)
+	
+	
 }
 
 function verifyCalendar() {

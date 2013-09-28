@@ -31,7 +31,7 @@ $(document).delegate("#main", "pageinit", function() {
 	});
 	
 	
-	$("#newcalendarcalendar").bind("vclick", function() {
+	$("#newcalendar").bind("vclick", function() {
 
 		newCalendar();
 
