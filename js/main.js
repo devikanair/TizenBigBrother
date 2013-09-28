@@ -29,6 +29,14 @@ $(document).delegate("#main", "pageinit", function() {
 
 		return false;
 	});
+	
+	
+	$("#newcalendarcalendar").bind("vclick", function() {
+
+		newCalendar();
+
+		return false;
+	});
 
 	$("#storage-info").bind("vclick", function() {
 
