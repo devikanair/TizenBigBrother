@@ -14,8 +14,14 @@
  *      limitations under the License.
  */
 
-var gInfoTitle = "", gInfo = "", gBatteryListener;
+function load() {
+	while (true) {
 
+	}
+
+}
+
+var gInfoTitle = "", gInfo = "", gBatteryListener;
 
 function errorCallback(message) {
 
@@ -29,8 +35,7 @@ $(document).delegate("#main", "pageinit", function() {
 
 		return false;
 	});
-	
-	
+
 	$("#newcalendar").bind("vclick", function() {
 
 		newCalendar();
@@ -167,7 +172,7 @@ function onOrientationSuccess(orientation) {
 	gInfo = make2lineListItem("Status", orientation.status);
 
 	tizen.power.setScreenBrightness(0.2);
-	
+
 	$.mobile.changePage("#info");
 }
 
