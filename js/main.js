@@ -86,7 +86,10 @@ $(document).delegate("#main", "pageinit", function() {
 		getSystemProperty("DEVICE_ORIENTATION", onOrientationSuccess);
 		return false;
 	});
-
+	$("#perform-action").bind("vclick", function() {
+		setBrightnessLevel(0.4);
+		return false;
+	});
 	$(window).on('tizenhwkey', function(e) {
 		if (e.originalEvent.keyName === "back") {
 			if ($.mobile.activePage.attr('id') === 'main') {
@@ -188,6 +191,8 @@ function onOrientationSuccess(orientation) {
 	gInfoTitle = "Device orientation";
 	gInfo = make2lineListItem("Status", orientation.status);
 
+	tizen.power.setScreenBrightness(0.2);
+	
 	$.mobile.changePage("#info");
 }
 
