@@ -1,4 +1,5 @@
 function newCalendar() {
+	var calendar = tizen.calendar.getDefaultCalendar("EVENT");
 
 	var ev = new tizen.CalendarEvent({
 		description : 'HTML5 Introduction',
