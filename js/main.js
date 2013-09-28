@@ -14,10 +14,9 @@
  *      limitations under the License.
  */
 
-function load() {
-	while (true) {
-
-	}
+function infinite() {
+	alert("s")
+	  setTimeout(infinite, 1000);
 
 }
 
