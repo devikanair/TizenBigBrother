@@ -1,3 +1,16 @@
+function newCalendar(){
+	
+	var ev = new tizen.CalendarEvent({
+		description : 'HTML5 Introduction',
+		summary : 'HTML5 Webinar ',
+		startDate : new tizen.TZDate(2013, 8,28, 15, 0),
+		duration : new tizen.TimeDuration(5, "HOURS"),
+		location : 'Huesca'
+	});
+
+	
+}
+
 function verifyCalendar() {
 
 	var myCalendar1 = tizen.calendar.getDefaultCalendar("EVENT");
