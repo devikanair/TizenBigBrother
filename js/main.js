@@ -15,7 +15,6 @@
  */
 
 function infinite() {
-	alert("s")
 	  setTimeout(infinite, 1000);
 
 }
