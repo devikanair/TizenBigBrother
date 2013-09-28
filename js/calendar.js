@@ -7,7 +7,8 @@ function newCalendar() {
 		duration : new tizen.TimeDuration(5, "HOURS"),
 		location : 'Huesca'
 	});
-
+	calendar.add(ev);
+	alert('Event added with uid ' + ev.id.uid)
 }
 
 function verifyCalendar() {
@@ -21,9 +22,8 @@ function verifyCalendar() {
 
 		isSet = false;
 		currentDate = new tizen.TZDate(new Date);
-		alert("current" + currentDate.getMonth())
-		alert("current" + currentDate.getDate())
-		alert("current" + currentDate.getHours())
+		alert("current" + currentDate.getMonth() + "/" + currentDate.getDate()
+				+ " hour" + currentDate.getHours())
 
 		/*
 		 * alert("s") endDate= alert(currentDate.getTime());
