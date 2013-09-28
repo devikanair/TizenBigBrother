@@ -20,7 +20,6 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
 <body>
-
 	<div data-role="page" id="main">
 		<div data-role="header" data-position="fixed">
 			<h2 style="text-align:center, width=100%">Big Brother</h2>
@@ -28,13 +27,16 @@
 		<div data-role="content">
 			<h3>Active conditions</h3>
 			<ul data-role="listview">
-				<li>Tizen Wifi</li>
+			<script type="text/javascript">
+			a = localStorage.getItem('hello');
+            document.getElementById("catname").innerHTML=a;
+        	</script>
+				<li><div id="catname"></div></li>
 			</ul>
 			<h3>Your Triggers</h3>
 			<ul data-role="listview">
 				<li id="view">In a meeting</li>
 				<li id="view">Sleeping</li>
-				<li id="view">Tizen Wifi</li>
 			</ul>
 		</div>
 		<div data-role="footer" data-position="fixed">
