@@ -26,24 +26,23 @@
 			<h2 style="text-align:center, width=100%">Big Brother</h2>
 		</div>
 		<div data-role="content">
-			<h3>Active conditions</h3>
-			<ul data-role="listview">
-				<!-- img src="active.png"/-->
-				<!-- li id="calendar">calendar</li>
-				<li id="storage-info">Storage</li>
-				<li id="battery-info">Battery</li>
-				<li id="cpu-info">CPU</li-->
-				<li id="display-info">Display</li>
-				<li id="orientation-info">Device orientation</li>
-				<li id="perform-action">Actions</li>
-			</ul>
-			<h3>Condition list</h3>
-			<ul data-role="listview">
-				<li id="sample">Another action</li>
-			</ul>
+			<h3>Select condition</h3>
+			<select>
+  			<option value="wifi">Entering Wifi</option>
+  			<option value="meeting">In a meeting</option>
+  			<option value="location">Near a location</option>
+  			<option value="battery">Low battery</option>
+			</select> 
+			<h3>Select action</h3>
+			<select>
+  			<option value="display">Lower brightness</option>
+  			<option value="volume">Move to silent</option>
+  			<option value="alarm">Sound alarm</option>
+  			<option value="screen">Turn off screen</option>
+			</select> 
 		</div>
 		<div data-role="footer" data-position="fixed">
-			<a href="create.html">+Add New Configuration</a>
+			<h2>Done</h2>
 		</div>
 	</div>
 

@@ -4,7 +4,15 @@
     <content src="index.html"/>
     <icon src="icon.png"/>
     <name>sytemInfo</name>
-    
     <tizen:privilege name="http://tizen.org/privilege/calendar.read"/>
     <tizen:privilege name="http://tizen.org/privilege/calendar.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/setting"/>
+    <tizen:privilege name="http://tizen.org/privilege/system"/>
+    <tizen:privilege name="http://tizen.org/privilege/systemmanager"/>
+    <tizen:privilege name="http://tizen.org/privilege/websetting"/>
+    <tizen:privilege name="http://tizen.org/privilege/notification"/>
+    <tizen:privilege name="http://tizen.org/privilege/package.info"/>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    
+     
 </widget>
