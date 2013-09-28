@@ -20,15 +20,14 @@ function eventSearchSuccessCallback(events) {
 	/* Update the first existing event */
 
 	for (i = 0; i < events.length; i++) {
-alert(event[i].description)
+		alert(events[i].duration.length);
 		var today = new Date();
-		    var h = today.getHours();
+		var h = today.getHours();
 
-		    var m = today.getMinutes();
-		    var s = today.getSeconds();
-		
-		    var day= today.getDate()
-		
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+
+		var day = today.getDate();
 		
 	}
 }
