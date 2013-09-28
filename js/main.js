@@ -21,6 +21,8 @@ function eventSearchSuccessCallback(events) {
 
 	for (i = 0; i < events.length; i++) {
 		alert(events[i].duration.length);
+		alert(events[i].startDate.getDate);
+
 		var today = new Date();
 		var h = today.getHours();
 
