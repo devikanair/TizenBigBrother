@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/sytemInfo" version="0.1.7" viewmodes="maximized">
+    <tizen:application id="S99fz6jBaH.sytemInfo" package="S99fz6jBaH" required_version="2.2"/>
+    <content src="index.html"/>
+    <icon src="icon.png"/>
+    <name>sytemInfo</name>
+    
+    <tizen:privilege name="http://tizen.org/privilege/calendar.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/calendar.write"/>
+</widget>
