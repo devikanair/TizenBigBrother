@@ -20,7 +20,7 @@ function eventSearchSuccessCallback(events) {
 	/* Update the first existing event */
 
 	for (i = 0; i < events.length; i++) {
-alert(vent[i].description)
+alert(event[i].description)
 		var today = new Date();
 		    var h = today.getHours();
 
