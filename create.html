@@ -41,23 +41,39 @@
 		<!-- /header -->
 		<form action="index2.html" method="get">
 			<div data-role="content">
-				<h3>Select condition</h3>
-				Name: <input type="text" name="name" id="name"><br> <select>
-					<option value="wifi">Entering Wifi</option>
-					<option value="meeting">In a meeting</option>
-					<option value="location">Near a location</option>
-					<option value="battery">Low battery</option>
-				</select> Filter: <input type="text" name="filters"><br>
-				<h3>Select action</h3>
-				<select>
-					<option value="display">Lower brightness</option>
-					<option value="volume">Move to silent</option>
-					<option value="alarm">Sound alarm</option>
-					<option value="screen">Turn off screen</option>
-				</select> Message: <input type="text" name="filters"><br>
+
+				<ul data-role="listview">
+				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Select condition</li>
+
+
+					<h3></h3>
+					Name:
+					<input type="text" name="name" id="name">
+					<br>
+					<select>
+						<option value="wifi">Entering Wifi</option>
+						<option value="meeting">In a meeting</option>
+						<option value="location">Near a location</option>
+						<option value="battery">Low battery</option>
+					</select> Filter:
+					<input type="text" name="filters">
+					<br>
+				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Select action</li>
+					<select>
+						<option value="display">Lower brightness</option>
+						<option value="volume">Move to silent</option>
+						<option value="alarm">Sound alarm</option>
+						<option value="screen">Turn off screen</option>
+					</select> Message:
+					<input type="text" name="filters">
+					<br>
+				</ul>
+
 			</div>
+
+
 			<div data-role="footer" data-position="fixed">
-				<input type="submit" value="Submit" onclick="postData()" />
+				<input type="submit" value="Submit" data-role="button" data-theme="b" data-theme="b"onclick="postData()" />
 			</div>
 		</form>
 	</div>
