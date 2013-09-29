@@ -13,10 +13,25 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
-
+var loop=true;
 function infinite() {
-	alert("s")
-	  setTimeout(infinite, 1000);
+	if (loop)
+	{	getSystemProperty("WIFI_NETWORK", onWifiSuccess);
+
+	function onWifiSuccess(wifi) {
+		
+		if(wifi.status == "ON") {
+			alert("s");
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://zapier.com/hooks/catch/n/tr8ng/", true);
+			xhr.send();
+			loop =false;
+			alert("t");
+		}
+	}
+	
+	  setTimeout(infinite, 1000);}
 
 }
 
