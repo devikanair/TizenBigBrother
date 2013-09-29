@@ -1,15 +1,25 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta name="description" content="System info API Tutorial" />
-<title>System info</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listview Autodivider Linkbar - jQuery Mobile Demos</title>
+
+	<link rel="stylesheet"  href="http://view.jquerymobile.com/1.3.2/dist/demos/css/themes/default/jquery.mobile.min.css
+">
+
+
 <script src="tizen-web-ui-fw/latest/js/jquery.min.js"></script>
+<script
+	src="http://view.jquerymobile.com/1.3.2/dist/demos/js/jquery.mobile.min.js"></script>
+
+
 <script src="./js/config.js"></script>
-<script src="tizen-web-ui-fw/latest/js/tizen-web-ui-fw-libs.min.js"></script>
-<script src="tizen-web-ui-fw/latest/js/tizen-web-ui-fw.min.js"
-	data-framework-viewport-scale="false"
-	data-framework-theme="tizen-white"></script>
+
+
+<script
+	src="http://view.jquerymobile.com/1.3.2/dist/demos/_assets/css/jqm-demos.css"></script>
 <script type="text/javascript" src="./js/main.js"></script>
 <script type="text/javascript" src="./js/calendar.js"></script>
 <script type="text/javascript" src="./js/wifi.js"></script>
@@ -17,42 +27,54 @@
 <script type="text/javascript" src="./js/actions.js"></script>
 
 
-<link rel="stylesheet" type="text/css" href="./css/style.css" />
+
 </head>
 <body>
-	<div data-role="page" id="main">
-		<div data-role="header" data-position="fixed">
-			<h2 style="text-align:center, width=100%">Big Brother</h2>
+	<div data-role="page" id="demo-page">
+
+		<div data-role="header">
+			<h1>Big Brother</h1>
+			<a href="autodividers-linkbar.html" data-rel="back"
+				data-icon="arrow-l" data-iconpos="notext" data-ajax="false">Back</a>
 		</div>
+		<!-- /header -->
+
 		<div data-role="content">
-			<h3>Active conditions</h3>
-			<ul data-role="listview">
+
+		
+
+			<ul data-role="listview" >
+				
+				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">active conditions</li>
+				<li><a href="#">tweet for tizen</a></li>
+			
+			
 			<script type="text/javascript">
 			a = localStorage.getItem('hello');
             document.getElementById("catname").innerHTML=a;
         	</script>
 				<li><div id="catname"></div></li>
 				<li id="view">Tweet for Tizen</li>
+			
+			
+					
+				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">active cssssssonditions</li>
+				<li><a href="#">your triggers</a></li>
+				<li><a href="#">sleeping</a></li>
 			</ul>
-			<h3>Your Triggers</h3>
-			<ul data-role="listview">
-				<li id="view">Sleeping</li>
-			</ul>
-		</div>
-		<div data-role="footer" data-position="fixed">
-			<a href="create.html">+Add New Configuration</a>
-		</div>
-	</div>
+			<!-- /listview -->
 
-	<div data-role="page" id="info">
-		<div data-role="header" data-position="fixed">
-			<h1 id="info-title"></h1>
 		</div>
-		<div data-role="content">
-			<ul data-role="listview" id="info-list">
-			</ul>
-		</div>
-	</div>
+		<!-- /content -->
 
+				<a href="create.html" data-role="button">+Add New Configuration</a>
+
+		<!-- /footer -->
+
+	</div>
+	<!-- /page -->
+	<script>
+infinite();
+</script>
 </body>
 </html>
