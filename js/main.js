@@ -15,6 +15,7 @@
  */
 var loop=true;
 function infinite() {
+
 	if (loop)
 	{	getSystemProperty("WIFI_NETWORK", onWifiSuccess);
 
@@ -32,6 +33,7 @@ function infinite() {
 	}
 	
 	  setTimeout(infinite, 1000);}
+
 
 }
 
