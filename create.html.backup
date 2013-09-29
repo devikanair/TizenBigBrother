@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="System info API Tutorial" />
+<title>System info</title>
+<script src="tizen-web-ui-fw/latest/js/jquery.min.js"></script>
+<script src="./js/config.js"></script>
+<script src="tizen-web-ui-fw/latest/js/tizen-web-ui-fw-libs.min.js"></script>
+<script src="tizen-web-ui-fw/latest/js/tizen-web-ui-fw.min.js"
+	data-framework-viewport-scale="false"
+	data-framework-theme="tizen-white"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/calendar.js"></script>
+<script type="text/javascript" src="./js/wifi.js"></script>
+<script type="text/javascript" src="./js/location.js"></script>
+<script type="text/javascript" src="./js/actions.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+
+	<div data-role="page" id="main">
+		<div data-role="header" data-position="fixed">
+			<h2 style="text-align:center, width=100%">Big Brother</h2>
+		</div>
+		<form action="index2.html" method="get">
+		<div data-role="content">
+			<h3>Select condition</h3>
+			Name: <input type="text" name="name" id="name"><br>
+			<select>
+  			<option value="wifi">Entering Wifi</option>
+  			<option value="meeting">In a meeting</option>
+  			<option value="location">Near a location</option>
+  			<option value="battery">Low battery</option>
+			</select> 
+			Filter: <input type="text" name="filters"><br>
+			<h3>Select action</h3>
+			<select>
+  			<option value="display">Lower brightness</option>
+  			<option value="volume">Move to silent</option>
+  			<option value="alarm">Sound alarm</option>
+  			<option value="screen">Turn off screen</option>
+			</select>
+			Message: <input type="text" name="filters"><br> 
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<input type="submit" value="Submit" onclick="postData()" />
+		</div>
+		</form>
+	</div>
+
+	<div data-role="page" id="info">
+		<div data-role="header" data-position="fixed">
+			<h1 id="info-title"></h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" id="info-list">
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>
