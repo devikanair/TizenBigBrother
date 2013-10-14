@@ -22,13 +22,13 @@ function infinite() {
 	function onWifiSuccess(wifi) {
 		
 		if(wifi.status == "ON") {
-		//	alert("s");
-
+			alert("s");
+/*
 			var xhr = new XMLHttpRequest();
 			xhr.open("GET", "https://zapier.com/hooks/catch/n/tr8ng/", true);
-			xhr.send();
+			xhr.send(); */
 			loop =false;
-		//	alert("t");
+			alert("t");
 		}
 	}
 	

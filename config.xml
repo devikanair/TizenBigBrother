@@ -10,6 +10,6 @@
     <tizen:privilege name="http://tizen.org/privilege/system"/>
 
     <tizen:privilege name="http://tizen.org/privilege/power"/>
-    
+    <access origin="*" subdomains="true"></access>
      
 </widget>
