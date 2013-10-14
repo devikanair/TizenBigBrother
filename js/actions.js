@@ -4,6 +4,7 @@ function setBrightnessLevel(level) {
 	tizen.power.turnScreenOff();
 }
 function postData(){
+	alert("hello")
 	myname = document.getElementById("name").value;
 	localStorage.setItem('hello', myname);
 }

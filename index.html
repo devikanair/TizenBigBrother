@@ -7,23 +7,25 @@
 <title>Listview Autodivider Linkbar - jQuery Mobile Demos</title>
 
 	<link rel="stylesheet"  href="./css/jquery.mobile.min.css">
+	<link rel="stylesheet"  href="./css/style.css">
 
 
 <script src="tizen-web-ui-fw/latest/js/jquery.min.js"></script>
 <script type="text/javascript" src="./js/jquery.mobile.min.js"></script>
-
-
-
 <script src="./js/config.js"></script>
+<script	src="./css/jqm-demos.css"></script>
 
 
-<script
-	src="./css/jqm-demos.css"></script>
+
+
+
+
 <script type="text/javascript" src="./js/main.js"></script>
 <script type="text/javascript" src="./js/calendar.js"></script>
 <script type="text/javascript" src="./js/wifi.js"></script>
 <script type="text/javascript" src="./js/location.js"></script>
 <script type="text/javascript" src="./js/actions.js"></script>
+<script type="text/javascript" src="./js/ui.js"></script>
 
 
 
@@ -40,12 +42,17 @@
 
 		<div data-role="content">
 
-		
-
+	
 			<ul data-role="listview" >
 				
 				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Do This</li>
-				<li><a href="#">Tweet for Tizen</a></li>
+				<li id="slideWeather">Tweet for Tizen
+					<div class="buttonGroup "data-role="controlgroup"   data-mini="true" data-type="horizontal">
+						<a href="index.html" data-role="button">Active</a>
+						<a href="index.html" data-role="button">Inactive</a>
+					</div>
+				
+				</li>
 			
 			
 					
@@ -56,11 +63,10 @@
 			<!-- /listview -->
 
 		</div>
+
+				<a data-transition="flip" href="create.html" data-role="button">+Add New Configuration</a>
 		<!-- /content -->
 
-				<a href="create.html" data-role="button">+Add New Configuration</a>
-
-		<!-- /footer -->
 
 	</div>
 	<!-- /page -->
