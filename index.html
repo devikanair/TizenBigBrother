@@ -28,7 +28,7 @@
 
 
 </head>
-<body>
+<body onLoad="getAllTriggers()">
 	<div data-role="page" id="demo-page">
 
 		<div data-role="header">
@@ -38,24 +38,21 @@
 		</div>
 		<!-- /header -->
 
-		<div data-role="content">
+		<div data-role="active" id="active">
 
 		
 
 			<ul data-role="listview" >
-				
 				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Do This</li>
 				<li><a href="#">Tweet for Tizen</a></li>
-			
-			
-					
 				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Not That</li>
 				<li><a href="#">Your Triggers</a></li>
 				<li><a href="#">Sleeping</a></li>
 			</ul>
 			<!-- /listview -->
-
+		
 		</div>
+		<button onclick="getAllTriggers()">Try it</button>
 		<!-- /content -->
 
 				<a href="create.html" data-role="button">+Add New Configuration</a>
