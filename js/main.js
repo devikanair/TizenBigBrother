@@ -13,30 +13,107 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+//localStorage.clear();
+var loop = true;
 
+/* ======================= Local storage (Event) ======================= */
 
-var loop=true;
+Storage.prototype.setObj = function(key, obj) {
+	return this.setItem(key, JSON.stringify(obj))
+}
+Storage.prototype.getObj = function(key) {
+	return JSON.parse(this.getItem(key))
+}
 
+function setAction(type, extra) {
+	myAction = new Object();
+	myAction.type = type;
+	myAction.extra = extra;
+	return myAction;
+}
+
+window
+		.setInterval(
+				function() {
+
+					
+					
+					event = parseEvents();
+					var active = "";
+					for (i = 0; i <= event.length - 1; i++) {
+
+						if (event[i].active != "No")
+							active = active
+									+ "<li  class='ui-li ui-li-static ui-btn-up-c' id='event"
+									+ i
+									+ "'>"
+
+									+ event[i].name
+
+									+ i
+									+ '<div class="buttonGroup  ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini" data-role="controlgroup" data-mini="true" data-type="horizontal" aria-disabled="false" data-disabled="false" data-shadow="false" data-corners="true" data-exclude-invisible="true" data-init-selector=":jqmData(role=\'controlgroup\')"><div class="ui-controlgroup-controls">'
+									+ '<a id="eventA'
+									+ i
+									+ '" onclick="setActive('
+									+ i
+									+ ')" href="index.html" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn-active ui-btn ui-shadow ui-btn-corner-all ui-first-child ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Active</span></span></a>'
+									+ '<a id="eventI'
+									+ i
+									+ '" onclick="setInActive('
+									+ i
+									+ ')" href="index.html" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-last-child"><span class="ui-btn-inner"><span class="ui-btn-text">Inactive</span></span></a>'
+									+ '</div></div>' + "</li>";
+						else
+							active = active
+									+ "<li  class='ui-li ui-li-static ui-btn-up-c' id='event"
+									+ i
+									+ "'>"
+
+									+ event[i].name
+
+									+ i
+									+ '<div class="buttonGroup  ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini" data-role="controlgroup" data-mini="true" data-type="horizontal" aria-disabled="false" data-disabled="false" data-shadow="false" data-corners="true" data-exclude-invisible="true" data-init-selector=":jqmData(role=\'controlgroup\')"><div class="ui-controlgroup-controls">'
+									+ '<a id="eventA'
+									+ i
+									+ '" onclick="setActive('
+									+ i
+									+ ')" href="index.html" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class=" ui-btn ui-shadow ui-btn-corner-all ui-first-child ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Active</span></span></a>'
+									+ '<a id="eventI'
+									+ i
+									+ '" onclick="setInActive('
+									+ i
+									+ ')" href="index.html" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn-active ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-last-child"><span class="ui-btn-inner"><span class="ui-btn-text">Inactive</span></span></a>'
+									+ '</div></div>' + "</li>";
+					}
+					// alert("Ended call triggers");
+					active = active
+					+ "<li  class='ui-li ui-li-static ui-btn-up-c' id='event"
+					
+					+ "'></li>"
+					$('#active').html(active);
+
+				}, 1000);
+// infinite loop
 function infinite() {
 
-	if (loop)
-	{	getSystemProperty("WIFI_NETWORK", onWifiSuccess);
+	if (loop) {
+		getSystemProperty("WIFI_NETWORK", onWifiSuccess);
 
-	function onWifiSuccess(wifi) {
-		
-		if(wifi.status == "ON") {
-			alert("s");
+		function onWifiSuccess(wifi) {
 
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "https://zapier.com/hooks/catch/n/tr8ng/", true);
-			xhr.send();
-			loop =false;
-			alert("t");
+			if (wifi.status == "ON") {
+				alert("s");
+				/*
+				 * var xhr = new XMLHttpRequest(); xhr.open("GET",
+				 * "https://zapier.com/hooks/catch/n/tr8ng/", true); xhr.send();
+				 */
+				loop = false;
+				alert("t");
+			}
 		}
-	}
-	
-	  setTimeout(infinite, 1000);}
 
+		setTimeout(infinite, 1000);
+	}
 
 }
 
@@ -201,4 +278,64 @@ function getSystemProperty(property, onSuccess) {
 	} catch (e) {
 		alert("Exception: " + e.message);
 	}
+}
+
+function storeEvent(myEvent) {
+	eventHash = localStorage.getObj('eventHash');
+	if (eventHash == null) {
+		eventHash = [];
+		eventHash.push(myEvent);
+	} else {
+		eventHash.push(myEvent);
+	}
+
+	localStorage.setObj('eventHash', eventHash)
+}
+
+function setEvent(name, active, type, extra, action, actionextra) {
+	myEvent = new Object();
+	myEvent.name = name;
+	myEvent.active = active;
+	myEvent.type = type;
+	myEvent.extra = extra;
+	myEvent.action = action;
+	myEvent.actionextra = actionextra;
+	return myEvent;
+}
+
+function setStatus(eventArray, i, status) {
+	/*
+	 * for (i = 0; i < eventArray.length; i++) {
+	 * 
+	 * if (eventArray[i].name == name) { alert("Disabling ");
+	 * eventArray[i].active = "No"; } }
+	 */
+	eventArray[i].active = status;
+	localStorage.setObj('eventHash', eventArray);
+}
+
+function parseEvents() {
+	val1 = localStorage.getItem('eventHash');
+	myeventArray = eval(val1);// [{a:b,c:d},{ddd:dd,ss:ss}]
+	eventArray = [];
+	for (i = 0; i < myeventArray.length; i++) {
+		myevent = myeventArray[i];
+		event = setEvent(myevent.name, myevent.active, myevent.type,
+				myevent.extra, myevent.action, myevent.actionextra);
+		eventArray.push(event);
+	}
+	return eventArray;
+}
+
+function setActive(divId) {
+	$("#eventI" + divId).removeClass("ui-btn-active")
+	$("#eventA" + divId).addClass("ui-btn-active")
+	setStatus(parseEvents(), divId, "Yes")
+
+}
+
+function setInActive(divId) {
+	$("#eventA" + divId).removeClass("ui-btn-active")
+	$("#eventI" + divId).addClass("ui-btn-active")
+	setStatus(parseEvents(), divId, "No")
 }

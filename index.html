@@ -40,32 +40,36 @@
 		</div>
 		<!-- /header -->
 
-		<div data-role="content">
+		<div data-role="content" >
 
 	
 			<ul data-role="listview" >
-				
 				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Do This</li>
-				<li id="slideWeather">Tweet for Tizen
+				<div id="active"></div>
+			<!--	
+			<li id="slideWeather">Tweet for Tizen
 					<div class="buttonGroup "data-role="controlgroup"   data-mini="true" data-type="horizontal">
 						<a href="index.html" data-role="button">Active</a>
 						<a href="index.html" data-role="button">Inactive</a>
 					</div>
 				
 				</li>
-			
-			
-					
-				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Not That</li>
-				<li><a href="#">Your Triggers</a></li>
-				<li><a href="#">Sleeping</a></li>
+				-->
+
+				
+
 			</ul>
 			<!-- /listview -->
-
+			
+				<a data-transition="flip" href="create.html" data-role="button">Add New Configuration</a>
+		</div>	
+			<div data-role="footer" >
+		
+		
 		</div>
 
-				<a data-transition="flip" href="create.html" data-role="button">+Add New Configuration</a>
-		<!-- /content -->
+		<!--<button onclick="getAllTriggers()">Try it</button>-->
+
 
 
 	</div>

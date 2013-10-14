@@ -38,7 +38,7 @@
 				data-icon="arrow-l" data-iconpos="notext" data-ajax="false">Back</a>
 		</div>
 		<!-- /header -->
-		<form action="index2.html" method="get">
+		<form action="index.html" method="get" id="myform" name="myform">
 			<div data-role="content">
 
 				<ul data-role="listview">
@@ -49,7 +49,7 @@
 					Name:
 					<input type="text" name="name" id="name">
 					<br>
-					<select>
+					<select id="type">
 						<option value="wifi">Entering Wifi</option>
 						<option value="meeting">In a meeting</option>
 						<option value="location">Near a location</option>
@@ -58,23 +58,25 @@
 					<input type="text" name="filters">
 					<br>
 				<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-first-child">Select action</li>
-					<select>
+					<select id="action">
 						<option value="display">Lower brightness</option>
 						<option value="volume">Move to silent</option>
 						<option value="alarm">Sound alarm</option>
 						<option value="screen">Turn off screen</option>
 					</select> Message:
-					<input type="text" name="filters">
+					<input type="text" name="filters" id="actionfilter">
 					<br>
 				</ul>
 
 			</div>
-				<a onclick="postData()" data-transition="flip" href="create.html" data-role="button">Submit</a>
 				
 
 			<div data-role="footer" data-position="fixed">
 			</div>
 		</form>
+		<a data-transition="flip" href="index.html" data-role="button" onclick="postData()">Save</a>
+		<a data-transition="flip" href="index.html" data-role="button">Cancel</a>
+		
 	</div>
 
 	<div data-role="page" id="info">
