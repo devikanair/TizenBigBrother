@@ -14,6 +14,79 @@
  *      limitations under the License.
  */
 var loop=true;
+/* ======================= Local storage (Event) ======================= */
+
+Storage.prototype.setObj = function (key, obj) {
+  return this.setItem(key, JSON.stringify(obj))
+}
+Storage.prototype.getObj = function (key) {
+  return JSON.parse(this.getItem(key))
+}
+
+//Store "myEvent" into offline storage
+function storeEvent(myEvent) {	
+  eventHash = localStorage.getObj('eventHash');
+  if (eventHash == null) {
+    eventHash = {};
+    eventHash[myEvent.name] = myEvent;
+  } else {
+    eventHash[myEvent.name] = myEvent;
+  }
+
+  localStorage.setObj('eventHash',eventHash)
+}
+
+function setAction(type, extra) {
+	myAction=new Object();
+	myAction.type=type;
+	myAction.extra=extra;
+	return myAction;
+}
+
+function setEvent(name, active, type, extra, action) {
+	myEvent=new Object();
+	myEvent.name = name;
+	myEvent.active=active;
+	myEvent.type=type;
+	myEvent.extra=extra;
+	myEvent.action=action;
+	return myEvent;
+}
+
+window.setInterval(function(){
+	  /// call your function here
+//$(document).ready(function(){
+//function getAllTriggers(){
+//	alert("Call get all triggers");
+	//localStorage.clear();
+	//action = setAction("Tweet", "Hello I am hacking");
+	//trigger = setEvent("Tweet for CMUSV", "Yes", "Wifi", "SSID 50", action);
+		
+	//storeEvent(trigger);
+
+	//Sample html
+	//var x=document.getElementById("active");
+	//x.innerHTML="<b><i>Hello world</i></b>";
+	
+	//Loop through all localStorage?
+	$("#active").empty();//="";
+	for (i=0; i<=localStorage.length-1; i++) { // i<100 works perfectly
+	//	alert("Element "+ i);
+		key = localStorage.key(i);
+		val = localStorage.getItem(key);
+		$('#active').append(key + val);
+			
+		//value = val.split(","); //splitting string inside array to get name
+		//name[i] = value[1]; // getting name from split string
+	}
+	//alert("Ended call triggers");
+
+//});
+}, 1000);
+
+
+
+//infinite loop
 function infinite() {
 
 	if (loop)
