@@ -316,13 +316,19 @@ function setStatus(eventArray, i, status) {
 
 function parseEvents() {
 	val1 = localStorage.getItem('eventHash');
-	myeventArray = eval(val1);// [{a:b,c:d},{ddd:dd,ss:ss}]
+	
 	eventArray = [];
-	for (i = 0; i < myeventArray.length; i++) {
-		myevent = myeventArray[i];
-		event = setEvent(myevent.name, myevent.active, myevent.type,
-				myevent.extra, myevent.action, myevent.actionextra);
-		eventArray.push(event);
+	if (val1!=null)
+	{
+		myeventArray = eval(val1);// [{a:b,c:d},{ddd:dd,ss:ss}]
+
+		for (i = 0; i < myeventArray.length; i++) {
+			myevent = myeventArray[i];
+			event = setEvent(myevent.name, myevent.active, myevent.type,
+					myevent.extra, myevent.action, myevent.actionextra);
+			eventArray.push(event);
+		}
+	
 	}
 	return eventArray;
 }
