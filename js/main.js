@@ -36,8 +36,6 @@ window
 		.setInterval(
 				function() {
 
-					
-					
 					event = parseEvents();
 					var active = "";
 					for (i = 0; i <= event.length - 1; i++) {
@@ -50,7 +48,7 @@ window
 
 									+ event[i].name
 
-									+ i
+									
 									+ '<div class="buttonGroup  ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini" data-role="controlgroup" data-mini="true" data-type="horizontal" aria-disabled="false" data-disabled="false" data-shadow="false" data-corners="true" data-exclude-invisible="true" data-init-selector=":jqmData(role=\'controlgroup\')"><div class="ui-controlgroup-controls">'
 									+ '<a id="eventA'
 									+ i
@@ -71,7 +69,7 @@ window
 
 									+ event[i].name
 
-									+ i
+									
 									+ '<div class="buttonGroup  ui-corner-all ui-controlgroup ui-controlgroup-horizontal ui-mini" data-role="controlgroup" data-mini="true" data-type="horizontal" aria-disabled="false" data-disabled="false" data-shadow="false" data-corners="true" data-exclude-invisible="true" data-init-selector=":jqmData(role=\'controlgroup\')"><div class="ui-controlgroup-controls">'
 									+ '<a id="eventA'
 									+ i
@@ -87,28 +85,40 @@ window
 					}
 					// alert("Ended call triggers");
 					active = active
-					+ "<li  class='ui-li ui-li-static ui-btn-up-c' id='event"
-					
-					+ "'></li>"
+							+ "<li  class='ui-li ui-li-static ui-btn-up-c' id='event"
+
+							+ "'></li>"
 					$('#active').html(active);
 
 				}, 1000);
 // infinite loop
 function infinite() {
-
+	
 	if (loop) {
 		getSystemProperty("WIFI_NETWORK", onWifiSuccess);
 
 		function onWifiSuccess(wifi) {
 
-			if (wifi.status == "ON") {
-				alert("s");
-				/*
-				 * var xhr = new XMLHttpRequest(); xhr.open("GET",
-				 * "https://zapier.com/hooks/catch/n/tr8ng/", true); xhr.send();
-				 */
-				loop = false;
-				alert("t");
+			event = parseEvents();
+			var active = "";
+			for (i = 0; i <= event.length - 1; i++) {
+
+				if (event[i].type = "wifi") {
+					console.log(	wifi.ssid);
+					console.log("mine"+event[i].extra);
+
+					if (wifi.status == "On") {
+						//alert("s");
+						
+						  var xhr = new XMLHttpRequest(); xhr.open("GET",
+						  "https://zapier.com/hooks/catch/n/tnjwv/", true);
+						  xhr.send();
+						 
+						loop = false;
+						//alert("t");
+					}
+				}
+
 			}
 		}
 
@@ -316,10 +326,9 @@ function setStatus(eventArray, i, status) {
 
 function parseEvents() {
 	val1 = localStorage.getItem('eventHash');
-	
+
 	eventArray = [];
-	if (val1!=null)
-	{
+	if (val1 != null) {
 		myeventArray = eval(val1);// [{a:b,c:d},{ddd:dd,ss:ss}]
 
 		for (i = 0; i < myeventArray.length; i++) {
@@ -328,7 +337,7 @@ function parseEvents() {
 					myevent.extra, myevent.action, myevent.actionextra);
 			eventArray.push(event);
 		}
-	
+
 	}
 	return eventArray;
 }
